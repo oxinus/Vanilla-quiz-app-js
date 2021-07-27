@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(33, 130, 209);
+    font-family: sans-serif;
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------------------start quiz --------------------- */
+.start-quiz{
+    display: block;
+    font-size: 1.1rem;
+    background-color: white;
+    color:  rgb(33, 130, 209);
+    border: none;
+    height: 50px;
+    width: 130px;
+    letter-spacing: 1px;
+    box-shadow: 1px 5px 10px rgba(68, 66, 66, 0.514);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all ease .2s;
+}
+.start-quiz:hover{
+    background-color: rgb(228, 224, 224);
+}
+/* ------------------------------------------------------------- */
+
+/* --------------------------- info style -------------------- */
+.info-container{
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    height: 300px;
+    width: 500px;
+    border-radius: 4px;
+    box-shadow:5px 5px 5px  rgba(68, 66, 66, 0.514) ;
+}
+.info-header{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px lightgrey solid;
+    padding: 15px;
+}
+.info-content{
+    padding: 20px;
+    letter-spacing: 1px;
+    line-height: 1.8rem;
+    border-bottom: 1px lightgrey solid;
+}
+.info-buttons{
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding:0 30px 0;
+}
+.exit-button{
+    background-color: white;
+    color:  rgb(33, 130, 209);
+    border: 1px rgb(33, 130, 209) solid;
+    border-radius: 3px;
+    padding: 5px;
+    width: 80px;
+    height: 32px;
+    margin-right: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.continue-button{
+    color: white;
+    background-color: rgb(33, 130, 209);
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    width: 80px;
+    height: 32px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.exit-button:hover{
+    color: white;
+    background-color: rgb(33, 130, 209);
+}
+.continue-button:hover{
+    background-color: rgb(50, 155, 241);
+}
+/* ------------------------------------------------------ */
+
+.questions-container{
+    display: none;
+    height: 440px;
+    width: 500px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 5px 5px 5px rgba(68, 66, 66, 0.514);
+}
+.question-header{
+    padding: 20px;
+    height: 60px;
+    border-bottom: 1px lightgrey solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-title{
+    font-weight: 600;
+}
+/* -------------------------------------------------- */
+
+/* -------------------- ques content --------------------- */
+.question-content{
+    padding: 20px;
+}
+.question-title{
+    font-size: large;
+    font-weight: 600;
+    padding-top: 8px;
+}
+.options{
+    padding-top: 25px;
+}
+li{
+    list-style: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 12px;
+    background-color: aliceblue;
+    border: 1px lightblue solid;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+li:hover{
+    background-color: rgb(224, 238, 250);
+}
+.check-icon{
+    color: green;
+    font-size: 1.1rem;
+}
+.times-icon{
+    color: red;
+    font-size: 1.2rem;
+}
+/* -------------------------------------------- */
+  
+/* ---------- ques footer ---------------- */
+.question-footer{
+    border-top: 1px lightgrey solid;
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.question-counter{
+    padding: 20px;
+}
+.nextbtn-container{
+    padding: 20px;
+}
+.next-button{
+    font-size: .9rem;
+    color: white;
+    background-color: rgb(50, 155, 241);
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+}
+.next-button:hover{
+    color: rgb(50, 155, 241);
+    background-color: white;
+    border: 1px rgb(50, 155, 241) solid;
+}
+/* --------------------------------------------- */

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz App</title>
+</head>
+<body>
+    <!-- html codes ---------------------------------------------->
+    <div class="container">
+        <section>
+            <button class="start-quiz">Start Quiz</button>
+        </section>
+        <section>
+            <div class="info-container">
+                <div class="info-header">
+                    Some Rules Of This Quiz
+                </div>
+                <div class="info-content">
+                    <p>1. You will have <span>15 Seconds</span> per each question.</p>
+                    <p>2. Once you select your answer, it can't be undone.</p>
+                    <p>3. You can't select any option once time goes off.</p>
+                    <p>4. You can't exit from Quiz while you're playing.</p>
+                    <p>5. You'll get points on the basis of your correct answers.</p>
+                </div>
+                <div class="info-buttons">
+                    <button class="exit-button">Exit Quiz</button>
+                    <button class="continue-button">Continue</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="questions-container">
+                <div class="question-header">
+                    <div class='header-title'>Awsome Quiz Application</div>
+                    <div class='header-timer'>Time Left<span id='timer'></span></div>
+                </div>
+                <div class="question-content">
+                    <div class="question-title"></div>
+                    <div class="options">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="question-footer">
+                    <div class="question-counter"></div>
+                    <div class='nextbtn-container'>
+                        <button class="next-button">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- --------->
+
+     <!-- js files ---------------------------------->
+     <script src="app.js" defer></script>
+     <script src="questions.js" ></script>
+     <!-- ------------------------------------------ --> 
+
+</body>
+</html>
