@@ -148,6 +148,7 @@ li:hover{
 .check-icon{
     color: green;
     font-size: 1.1rem;
+    display: none;
 }
 .times-icon{
     color: red;
