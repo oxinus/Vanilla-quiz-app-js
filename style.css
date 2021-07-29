@@ -142,7 +142,7 @@ li{
     justify-content: space-between;
     cursor: pointer;
 }
-li:hover{
+.li-hover:hover{
     background-color: rgb(224, 238, 250);
 }
 .check-icon{
