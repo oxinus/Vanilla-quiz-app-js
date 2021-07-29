@@ -1,3 +1,4 @@
+// getting html elements and access to them 
 const start = document.querySelector('.start-quiz');
 const info = document.querySelector('.info-container');
 const exitQuiz = document.querySelector('.exit-button');
@@ -8,17 +9,28 @@ let ul = document.querySelector('ul');
 const quescounter = document.querySelector('.question-counter');
 var timer = document.querySelector('#timer');
 var headerTimer = document.querySelector('.header-timer');
+// --------------------------------------------------
 
+// global variables 
 var timeLeft = 15;
 var userScore = 0
 var countdown;
+// -----------------------
+
+// functions that use more than one time 
+
 // number of the questions 
 function quesCounter (index) {
     quescounter.innerHTML = `<strong>${questions[index].numb}</strong> of <strong>${questions.length}</strong> Questions`;
 }
+
 // show the questions in li tag and set attributer for eachone 
 function quesHandler (numbIndex) {
+
+    // minus one because the numb of questions start from 1 but index of questions list starts from 0 
     let quesindex  = numbIndex - 1
+    // --------------------------------
+
     questionTitle.innerHTML = `<span>${questions[quesindex].numb}.</span> ${questions[quesindex].question}`;
     for (let i=0; i< questions[quesindex].options.length; i++){
         var li = document.createElement('li');
@@ -27,14 +39,18 @@ function quesHandler (numbIndex) {
         `${questions[quesindex].options[i]} <span class='check-icon'><i class="fas fa-check"></i></span>`: 
         `${questions[quesindex].options[i]} <span class='times-icon'><i class="fas fa-times"></i></span>` ;
         ul.appendChild(li);
+
+        // set a onclick for each one of li to access them all 
         li.setAttribute('onclick', `ansSelect(this, ${quesindex})`)
     }
 }
+
 //  handle timer coountdown 
 function startTimer(index) {
     countdown = setInterval(Timer ,1000)
     function Timer() {
         timer.innerText = timeLeft
+
         // when time is over interval will clear, and call auto select that show the correct answer
         if (timeLeft === 0){
             clearInterval(countdown)
@@ -47,15 +63,18 @@ function startTimer(index) {
         } else{timeLeft --} 
     }    
 }
+
 // show the correct answer and also disable all options 
 function autoSelect (index) {
     correctHandler(index)
     disable_optionHandler(index)
 }
+
 // stop counter when user select 
 function stopCounter() {
     clearInterval(countdown)
 }
+
 // disable options and set some styles when user select 
 function disable_optionHandler(userSlct) {
     for (let i=0; i<4; i++){
@@ -66,12 +85,14 @@ function disable_optionHandler(userSlct) {
         ul.childNodes[i].setAttribute('onclick', 'function userClick(){return null}')
     }
 }
+
 // when user select the correct answer 
 function correctHandler(userSlct) {
     const checkIcon = document.querySelector('.check-icon');
     checkIcon.style.display = 'block';
     userSlct.style.backgroundColor = 'rgb(203, 241, 200)';
 }
+
 // whwn user select wrong answer 
 function wrongHandler(userSlct) {
     const timesIcon = document.querySelectorAll('.times-icon')
@@ -82,6 +103,7 @@ function wrongHandler(userSlct) {
         }
         userSlct.style.backgroundColor = 'rgb(255, 198, 198)'
 }
+
 // handle the user selection 
 function ansSelect(userAnswer, ansIndex) {
     stopCounter()
@@ -94,21 +116,28 @@ function ansSelect(userAnswer, ansIndex) {
         wrongHandler(userAnswer)
     }
 }
-// user click on the Start Quiz 
+// end of functions ----------------------------
+
+// ------------------------------------------------------------------
+
+// event handlers ----------------
+
+// user click on the Start Quiz change the curren page style to none to be disappeared and next page eill be shown
 start.onclick = function() {
     start.style.display ='none';
     info.style.display = 'flex';
 };
-// user click on the Exit Quiz 
+
+// user click on the Exit Quiz back to the previos page by changing its display 
 exitQuiz.onclick = function() {
     start.style.display = 'block';
     info.style.display = 'none';
 };
-// user click on the continue 
-cntinue.onclick = function() {
+
+// user click on the continue the questions will handle  
+cntinue.onclick = function(e) {
     info.style.display = 'none';
     infoContainer.style.display = 'block';
-    window.onload= function() {console.log('kjhg')}
     quesHandler(questions[0].numb)
     quesCounter(0);
     startTimer(0)
