@@ -31,20 +31,28 @@ function quesHandler (numbIndex) {
     }
 }
 //  handle timer coountdown 
-function startTimer() {
+function startTimer(index) {
     countdown = setInterval(Timer ,1000)
     function Timer() {
         timer.innerText = timeLeft
         timeLeft -- 
+        // when time is over interval will clear, 
         if (timeLeft < 0){
             clearInterval(countdown)
             headerTimer.innerText = 'Time Off'
+            autoSelect(questions[index.answer])
         }  
     }    
 }
+function autoSelect (index) {
+    correctHandler(index)
+    disable_optionHandler(index)
+}
+// stop counter when user select 
 function stopCounter() {
     clearInterval(countdown)
 }
+// disable options and set some styles when user select 
 function disable_optionHandler(userSlct) {
     userSlct.style.border = 'none';
     for (let i=0; i<4; i++){
@@ -53,11 +61,13 @@ function disable_optionHandler(userSlct) {
         ul.childNodes[i].setAttribute('onclick', 'function userClick(){return null}')
     }
 }
+// when user select the correct answer 
 function correctHandler(userSlct) {
     const checkIcon = document.querySelector('.check-icon');
     checkIcon.style.display = 'block';
     userSlct.style.backgroundColor = 'rgb(203, 241, 200)';
 }
+// whwn user select wrong answer 
 function wrongHandler(userSlct) {
     const timesIcon = document.querySelectorAll('.times-icon')
         for (let i=0; i<3; i++){
@@ -70,20 +80,14 @@ function wrongHandler(userSlct) {
 // handle the user selection 
 function ansSelect(userAnswer, ansIndex) {
     stopCounter()
-    // disable all options after ckicked on the option 
     disable_optionHandler(userAnswer)
-    // when user click on the right answer 
    if (userAnswer.innerText === questions[ansIndex].answer){
        userScore += 1;
        correctHandler(userAnswer)
     } 
-    // when click on the uncorrect answer 
     else{
         wrongHandler(userAnswer)
     }
-}
-function autoSelect() {
-
 }
 // user click on the Start Quiz 
 start.onclick = function() {
@@ -101,5 +105,5 @@ cntinue.onclick = function() {
     infoContainer.style.display = 'block';
     quesHandler(questions[0].numb)
     quesCounter(0);
-    startTimer()
+    startTimer(0)
 };
