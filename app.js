@@ -35,9 +35,8 @@ function startTimer(index) {
     countdown = setInterval(Timer ,1000)
     function Timer() {
         timer.innerText = timeLeft
-        timeLeft -- 
         // when time is over interval will clear, and call auto select that show the correct answer
-        if (timeLeft < 0){
+        if (timeLeft === 0){
             clearInterval(countdown)
             headerTimer.innerText = 'Time Off'
             for (let i=0; i<4; i++){
@@ -45,7 +44,7 @@ function startTimer(index) {
                 autoSelect(ul.childNodes[i])
                 }
             }
-        }  
+        } else{timeLeft --} 
     }    
 }
 // show the correct answer and also disable all options 
@@ -59,9 +58,10 @@ function stopCounter() {
 }
 // disable options and set some styles when user select 
 function disable_optionHandler(userSlct) {
-    userSlct.style.border = 'none';
     for (let i=0; i<4; i++){
         ul.childNodes[i].style.cursor = 'default'
+        ul.childNodes[i].style.userSelect = 'none'
+        ul.childNodes[i].style.border = 'none';
         ul.childNodes[i].classList.remove('li-hover')
         ul.childNodes[i].setAttribute('onclick', 'function userClick(){return null}')
     }
@@ -108,6 +108,7 @@ exitQuiz.onclick = function() {
 cntinue.onclick = function() {
     info.style.display = 'none';
     infoContainer.style.display = 'block';
+    window.onload= function() {console.log('kjhg')}
     quesHandler(questions[0].numb)
     quesCounter(0);
     startTimer(0)
