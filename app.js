@@ -54,6 +54,15 @@ function correctHandler() {
     checkIcon.style.display = 'block';
     userAnswer.style.backgroundColor = 'rgb(203, 241, 200)';
 }
+function wrongHandler(userSlct) {
+    const timesIcon = document.querySelectorAll('.times-icon')
+        for (let i=0; i<3; i++){
+            if (timesIcon[i].previousSibling.textContent === userSlct.textContent){
+                timesIcon[i].style.display = 'block'
+            }
+        }
+        userAnswer.style.backgroundColor = 'rgb(255, 198, 198)'
+}
 // handle the user selection 
 function ansSelect(userAnswer, ansIndex) {
     // disable all options after ckicked on the option 
@@ -65,13 +74,7 @@ function ansSelect(userAnswer, ansIndex) {
     } 
     // when click on the uncorrect answer 
     else{
-        const timesIcon = document.querySelectorAll('.times-icon')
-        for (let i=0; i<3; i++){
-            if (timesIcon[i].previousSibling.textContent === userAnswer.textContent){
-                timesIcon[i].style.display = 'block'
-            }
-        }
-        userAnswer.style.backgroundColor = 'rgb(255, 198, 198)'
+        wrongHandler(userAnswer)
     }
 }
 // user click on the Start Quiz 
