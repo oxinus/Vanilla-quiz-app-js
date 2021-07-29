@@ -25,6 +25,10 @@ function quesHandler (index) {
 }
 function ansSelect(userAnswer, ansIndex) {
     userAnswer.style.border = 'none';
+    for (let i=0; i<4; i++){
+        ul.childNodes[i].style.cursor = 'default'
+        ul.childNodes[i].setAttribute('onclick', 'function userClick(){return null}')
+    }
    if (userAnswer.innerText === questions[ansIndex].answer){
         const checkIcon = document.querySelector('.check-icon');
         checkIcon.style.display = 'block';
