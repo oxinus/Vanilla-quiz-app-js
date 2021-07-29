@@ -106,6 +106,7 @@ function wrongHandler(userSlct) {
 
 // handle the user selection 
 function ansSelect(userAnswer, ansIndex) {
+    questions[ansIndex].state = true
     stopCounter()
     disable_optionHandler(userAnswer)
    if (userAnswer.innerText === questions[ansIndex].answer){
