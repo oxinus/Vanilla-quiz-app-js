@@ -29,15 +29,30 @@ function quesHandler (numbIndex) {
         li.setAttribute('onclick', `ansSelect(this, ${quesindex})`)
     }
 }
-// handle the user selection 
-function ansSelect(userAnswer, ansIndex) {
-    // disable all options after ckicked on the option 
-    userAnswer.style.border = 'none';
+//  handle timer coountdown 
+function startTimer() {
+    const countdown = setInterval(Timer ,1000)
+    function Timer() {
+        timer.innerText = timeLeft
+        timeLeft -- 
+        if (timeLeft < 0){
+            clearInterval(countdown)
+            headerTimer.innerText = 'Time Off'
+        }  
+    }    
+}
+function disable_optionHandler(userSlct) {
+    userSlct.style.border = 'none';
     for (let i=0; i<4; i++){
         ul.childNodes[i].style.cursor = 'default'
         ul.childNodes[i].classList.remove('li-hover')
         ul.childNodes[i].setAttribute('onclick', 'function userClick(){return null}')
     }
+}
+// handle the user selection 
+function ansSelect(userAnswer, ansIndex) {
+    // disable all options after ckicked on the option 
+    disable_optionHandler(userAnswer)
     // when user click on the right answer 
    if (userAnswer.innerText === questions[ansIndex].answer){
        userScore += 1;
@@ -73,16 +88,4 @@ cntinue.onclick = function() {
     quesHandler(questions[0].numb)
     quesCounter(0);
     startTimer()
-    
 };
-function startTimer() {
-    const countdown = setInterval(Timer ,1000)
-    function Timer() {
-        timer.innerText = timeLeft
-        timeLeft -- 
-        if (timeLeft < 0){
-            clearInterval(countdown)
-            headerTimer.innerText = 'Time Off'
-        }  
-    }    
-}
