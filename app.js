@@ -36,14 +36,19 @@ function startTimer(index) {
     function Timer() {
         timer.innerText = timeLeft
         timeLeft -- 
-        // when time is over interval will clear, 
+        // when time is over interval will clear, and call auto select that show the correct answer
         if (timeLeft < 0){
             clearInterval(countdown)
             headerTimer.innerText = 'Time Off'
-            autoSelect(questions[index.answer])
+            for (let i=0; i<4; i++){
+                if (ul.childNodes[i].innerText === questions[0].answer){
+                autoSelect(ul.childNodes[i])
+                }
+            }
         }  
     }    
 }
+// show the correct answer and also disable all options 
 function autoSelect (index) {
     correctHandler(index)
     disable_optionHandler(index)
@@ -75,7 +80,7 @@ function wrongHandler(userSlct) {
                 timesIcon[i].style.display = 'block'
             }
         }
-        userAnswer.style.backgroundColor = 'rgb(255, 198, 198)'
+        userSlct.style.backgroundColor = 'rgb(255, 198, 198)'
 }
 // handle the user selection 
 function ansSelect(userAnswer, ansIndex) {
