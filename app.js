@@ -11,6 +11,7 @@ var headerTimer = document.querySelector('.header-timer');
 
 var timeLeft = 15;
 var userScore = 0
+var countdown;
 // number of the questions 
 function quesCounter (index) {
     quescounter.innerHTML = `<strong>${questions[index].numb}</strong> of <strong>${questions.length}</strong> Questions`;
@@ -31,7 +32,7 @@ function quesHandler (numbIndex) {
 }
 //  handle timer coountdown 
 function startTimer() {
-    const countdown = setInterval(Timer ,1000)
+    countdown = setInterval(Timer ,1000)
     function Timer() {
         timer.innerText = timeLeft
         timeLeft -- 
@@ -41,6 +42,9 @@ function startTimer() {
         }  
     }    
 }
+function stopCounter() {
+    clearInterval(countdown)
+}
 function disable_optionHandler(userSlct) {
     userSlct.style.border = 'none';
     for (let i=0; i<4; i++){
@@ -49,10 +53,10 @@ function disable_optionHandler(userSlct) {
         ul.childNodes[i].setAttribute('onclick', 'function userClick(){return null}')
     }
 }
-function correctHandler() {
+function correctHandler(userSlct) {
     const checkIcon = document.querySelector('.check-icon');
     checkIcon.style.display = 'block';
-    userAnswer.style.backgroundColor = 'rgb(203, 241, 200)';
+    userSlct.style.backgroundColor = 'rgb(203, 241, 200)';
 }
 function wrongHandler(userSlct) {
     const timesIcon = document.querySelectorAll('.times-icon')
@@ -65,17 +69,21 @@ function wrongHandler(userSlct) {
 }
 // handle the user selection 
 function ansSelect(userAnswer, ansIndex) {
+    stopCounter()
     // disable all options after ckicked on the option 
     disable_optionHandler(userAnswer)
     // when user click on the right answer 
    if (userAnswer.innerText === questions[ansIndex].answer){
        userScore += 1;
-       correctHandler()
+       correctHandler(userAnswer)
     } 
     // when click on the uncorrect answer 
     else{
         wrongHandler(userAnswer)
     }
+}
+function autoSelect() {
+
 }
 // user click on the Start Quiz 
 start.onclick = function() {
