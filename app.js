@@ -102,6 +102,13 @@ function wrongHandler(userSlct) {
             }
         }
         userSlct.style.backgroundColor = 'rgb(255, 198, 198)'
+        
+        // show the correct answer when user select wrong 
+        for (let i=0; i<4; i++){
+            if (ul.childNodes[i].innerText === questions[0].answer){
+                correctHandler(ul.childNodes[i])
+            }
+        }
 }
 
 // handle the user selection 
