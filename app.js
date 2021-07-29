@@ -7,7 +7,10 @@ let questionTitle = document.querySelector('.question-title');
 let ul = document.querySelector('ul');
 const quescounter = document.querySelector('.question-counter');
 var timer = document.querySelector('#timer');
+var headerTimer = document.querySelector('.header-timer');
 
+var timeLeft = 15;
+var userScore = 0
 // number of the questions 
 function quesCounter (index) {
     quescounter.innerHTML = `<strong>${questions[index].numb}</strong> of <strong>${questions.length}</strong> Questions`;
@@ -37,6 +40,7 @@ function ansSelect(userAnswer, ansIndex) {
     }
     // when user click on the right answer 
    if (userAnswer.innerText === questions[ansIndex].answer){
+       userScore += 1;
         const checkIcon = document.querySelector('.check-icon');
         checkIcon.style.display = 'block';
         userAnswer.style.backgroundColor = 'rgb(203, 241, 200)';
@@ -68,4 +72,17 @@ cntinue.onclick = function() {
     infoContainer.style.display = 'block';
     quesHandler(questions[0].numb)
     quesCounter(0);
+    startTimer()
+    
 };
+function startTimer() {
+    const countdown = setInterval(Timer ,1000)
+    function Timer() {
+        timer.innerText = timeLeft
+        timeLeft -- 
+        if (timeLeft < 0){
+            clearInterval(countdown)
+            headerTimer.innerText = 'Time Off'
+        }  
+    }    
+}
