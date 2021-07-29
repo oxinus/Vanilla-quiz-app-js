@@ -49,6 +49,11 @@ function disable_optionHandler(userSlct) {
         ul.childNodes[i].setAttribute('onclick', 'function userClick(){return null}')
     }
 }
+function correctHandler() {
+    const checkIcon = document.querySelector('.check-icon');
+    checkIcon.style.display = 'block';
+    userAnswer.style.backgroundColor = 'rgb(203, 241, 200)';
+}
 // handle the user selection 
 function ansSelect(userAnswer, ansIndex) {
     // disable all options after ckicked on the option 
@@ -56,9 +61,7 @@ function ansSelect(userAnswer, ansIndex) {
     // when user click on the right answer 
    if (userAnswer.innerText === questions[ansIndex].answer){
        userScore += 1;
-        const checkIcon = document.querySelector('.check-icon');
-        checkIcon.style.display = 'block';
-        userAnswer.style.backgroundColor = 'rgb(203, 241, 200)';
+       correctHandler()
     } 
     // when click on the uncorrect answer 
     else{
