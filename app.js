@@ -24,10 +24,19 @@ function quesHandler (index) {
     }
 }
 function ansSelect(userAnswer, ansIndex) {
+    userAnswer.style.border = 'none';
    if (userAnswer.innerText === questions[ansIndex].answer){
         const checkIcon = document.querySelector('.check-icon');
         checkIcon.style.display = 'block';
         userAnswer.style.backgroundColor = 'rgb(203, 241, 200)';
+    } else{
+        const timesIcon = document.querySelectorAll('.times-icon')
+        for (let i=0; i<3; i++){
+            if (timesIcon[i].previousSibling.textContent === userAnswer.textContent){
+                timesIcon[i].style.display = 'block'
+            }
+        }
+        userAnswer.style.backgroundColor = 'rgb(255, 198, 198)'
     }
 }
 
