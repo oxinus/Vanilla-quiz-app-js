@@ -7,8 +7,8 @@ const infoContainer = document.querySelector('.questions-container');
 let questionTitle = document.querySelector('.question-title');
 let ul = document.querySelector('ul');
 const quescounter = document.querySelector('.question-counter');
-var timer = document.querySelector('#timer');
-var headerTimer = document.querySelector('.header-timer');
+var timerNumb = document.querySelector('.timer-number');
+var timeContent = document.querySelector('.time-content');
 // --------------------------------------------------
 
 // global variables 
@@ -49,12 +49,12 @@ function quesHandler (numbIndex) {
 function startTimer(index) {
     countdown = setInterval(Timer ,1000)
     function Timer() {
-        timer.innerText = timeLeft
+        timerNumb.innerText = timeLeft
 
         // when time is over interval will clear, and call auto select that show the correct answer
         if (timeLeft === 0){
             clearInterval(countdown)
-            headerTimer.innerText = 'Time Off'
+            timeContent.innerText = 'Time Off'
             for (let i=0; i<4; i++){
                 if (ul.childNodes[i].innerText === questions[0].answer){
                 autoSelect(ul.childNodes[i])
@@ -102,7 +102,7 @@ function wrongHandler(userSlct) {
             }
         }
         userSlct.style.backgroundColor = 'rgb(255, 198, 198)'
-        
+
         // show the correct answer when user select wrong 
         for (let i=0; i<4; i++){
             if (ul.childNodes[i].innerText === questions[0].answer){
