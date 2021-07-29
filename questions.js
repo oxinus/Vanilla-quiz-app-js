@@ -1,6 +1,7 @@
  const questions = [
     {
     numb: 1,
+    state :false,
     question: "What does HTML stand for?",
     answer: "Hyper Text Markup Language",
     options: [
@@ -12,6 +13,7 @@
   },
     {
     numb: 2,
+    state :false,
     question: "What does CSS stand for?",
     answer: "Cascading Style Sheet",
     options: [
@@ -23,6 +25,7 @@
   },
     {
     numb: 3,
+    state :false,
     question: "What does PHP stand for?",
     answer: "Hypertext Preprocessor",
     options: [
@@ -34,6 +37,7 @@
   },
     {
     numb: 4,
+    state :false,
     question: "What does SQL stand for?",
     answer: "Structured Query Language",
     options: [
@@ -45,6 +49,7 @@
   },
     {
     numb: 5,
+    state :false,
     question: "What does XML stand for?",
     answer: "eXtensible Markup Language",
     options: [
