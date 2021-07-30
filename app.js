@@ -77,16 +77,14 @@ function startTimerline() {
     }
 }
 
+
 // show the correct answer and also disable all options 
 function autoSelect (index) {
     correctHandler(index)
     disable_optionHandler(index)
 }
 
-// stop counter when user select 
-function stopCounter() {
-    clearInterval(countdown)
-}
+
 
 // disable options and set some styles when user select 
 function disable_optionHandler(userSlct) {
