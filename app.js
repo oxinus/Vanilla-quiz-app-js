@@ -14,7 +14,7 @@ var timerLine = document.querySelector('.timer-line')
 
 // global variables 
 var timeLeft = 15;
-var timerlineValue = 0;
+var timerlineWidth = 100;
 var userScore = 0;
 var countdown;
 var counterLine;
@@ -67,9 +67,10 @@ function startTimer(index) {
     }    
 }
 function startTimerline() {
-    counterLine = setInterval(timer, 29)
+    counterLine = setInterval(timer, 15)
     function timer() {
-        timerLine +=1
+        timerlineWidth -= 1/10
+        timerLine.style.width = `${timerlineWidth}%`
     }
 }
 
