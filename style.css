@@ -142,12 +142,14 @@ body{
 .time-content{
     color: rgb(115, 69, 146);
 }
+.timerLine-container{
+    background-color: lightgray;
+    margin: 0 1px;
+}
 .timer-line{
-    height: 3px;
+    height: 3px; 
     border: none;
     background-color:  rgb(134, 188, 233);
-    margin: 0 1px;
-    /* background-color: rgb(235, 232, 232); */
 }
 /* -------------------------------------------------- */
 

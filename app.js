@@ -9,12 +9,15 @@ let ul = document.querySelector('ul');
 const quescounter = document.querySelector('.question-counter');
 var timerNumb = document.querySelector('.timer-number');
 var timeContent = document.querySelector('.time-content');
+var timerLine = document.querySelector('.timer-line')
 // --------------------------------------------------
 
 // global variables 
 var timeLeft = 15;
-var userScore = 0
+var timerlineValue = 0;
+var userScore = 0;
 var countdown;
+var counterLine;
 // -----------------------
 
 // functions that use more than one time 
@@ -62,6 +65,12 @@ function startTimer(index) {
             }
         } else{timeLeft --} 
     }    
+}
+function startTimerline() {
+    counterLine = setInterval(timer, 29)
+    function timer() {
+        timerLine +=1
+    }
 }
 
 // show the correct answer and also disable all options 
@@ -149,4 +158,5 @@ cntinue.onclick = function(e) {
     quesHandler(questions[0].numb)
     quesCounter(0);
     startTimer(0)
+    startTimerline()
 };
