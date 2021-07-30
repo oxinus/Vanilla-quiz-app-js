@@ -67,10 +67,13 @@ function startTimer(index) {
     }    
 }
 function startTimerline() {
-    counterLine = setInterval(timer, 15)
+    counterLine = setInterval(timer, 1500)
     function timer() {
-        timerlineWidth -= 1/10
+        timerlineWidth -= 10
         timerLine.style.width = `${timerlineWidth}%`
+        if (timerlineWidth === 0){
+            clearInterval(counterLine)
+        }
     }
 }
 
