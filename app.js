@@ -178,7 +178,7 @@ cntinue.onclick = function(e) {
 };
 
 nextBtn.onclick = function() {
-    // if (questions[questionsIndex].state === false ){
-    //     return null
-    // } 
+    if (questions[questionsIndex].state === false ){
+        return null
+    } 
 }
