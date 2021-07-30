@@ -9,7 +9,8 @@ let ul = document.querySelector('ul');
 const quescounter = document.querySelector('.question-counter');
 var timerNumb = document.querySelector('.timer-number');
 var timeContent = document.querySelector('.time-content');
-var timerLine = document.querySelector('.timer-line')
+var timerLine = document.querySelector('.timer-line');
+var nextBtn = document.querySelector('.next-button');
 // --------------------------------------------------
 
 // global variables 
@@ -83,8 +84,9 @@ function startTimerline() {
 
 // show the correct answer and also disable all options 
 function autoSelect (index) {
-    correctHandler(index)
-    disable_optionHandler(index)
+    correctHandler(index);
+    disable_optionHandler(index);
+    nextbutn_styleHandler();
 }
 
 // disable options and set some styles when user select 
@@ -136,6 +138,12 @@ function ansSelect(userAnswer, ansIndex) {
     else{
         wrongHandler(userAnswer)
     }
+    nextbutn_styleHandler();
+}
+
+function nextbutn_styleHandler() {
+    nextBtn.style.opacity = 1;
+    nextBtn.style.cursor = 'pointer';
 }
 // end of functions ----------------------------
 
@@ -164,3 +172,4 @@ cntinue.onclick = function(e) {
     startTimer(0)
     startTimerline()
 };
+
