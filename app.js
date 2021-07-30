@@ -66,25 +66,26 @@ function startTimer(index) {
         } else{timeLeft --} 
     }    
 }
+
+// start timer line and every 15 ms decrease timerlineWidth 
 function startTimerline() {
     counterLine = setInterval(timer, 15)
     function timer() {
         timerlineWidth -= 1/10
         timerLine.style.width = `${timerlineWidth}%`
+         
+        // when times up we stop it 
         if (timerlineWidth === 0){
             clearInterval(counterLine)
         }
     }
 }
 
-
 // show the correct answer and also disable all options 
 function autoSelect (index) {
     correctHandler(index)
     disable_optionHandler(index)
 }
-
-
 
 // disable options and set some styles when user select 
 function disable_optionHandler(userSlct) {
