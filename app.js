@@ -67,9 +67,9 @@ function startTimer(index) {
     }    
 }
 function startTimerline() {
-    counterLine = setInterval(timer, 1500)
+    counterLine = setInterval(timer, 15)
     function timer() {
-        timerlineWidth -= 10
+        timerlineWidth -= 1/10
         timerLine.style.width = `${timerlineWidth}%`
         if (timerlineWidth === 0){
             clearInterval(counterLine)
@@ -125,7 +125,8 @@ function wrongHandler(userSlct) {
 // handle the user selection 
 function ansSelect(userAnswer, ansIndex) {
     questions[ansIndex].state = true
-    stopCounter()
+    clearInterval(countdown)
+    clearInterval(counterLine)
     disable_optionHandler(userAnswer)
    if (userAnswer.innerText === questions[ansIndex].answer){
        userScore += 1;
