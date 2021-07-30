@@ -17,6 +17,7 @@ var nextBtn = document.querySelector('.next-button');
 var timeLeft = 15;
 var timerlineWidth = 100;
 var userScore = 0;
+var questionsIndex = 0;
 var countdown;
 var counterLine;
 // -----------------------
@@ -141,10 +142,12 @@ function ansSelect(userAnswer, ansIndex) {
     nextbutn_styleHandler();
 }
 
+// after user select option or after sutoselect occurs this function will be call to change nextBtn style 
 function nextbutn_styleHandler() {
     nextBtn.style.opacity = 1;
     nextBtn.style.cursor = 'pointer';
 }
+
 // end of functions ----------------------------
 
 // ------------------------------------------------------------------
