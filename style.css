@@ -147,7 +147,7 @@ body{
     margin: 0 1px;
 }
 .timer-line{
-    height: 3px; 
+    height: 4px; 
     border: none;
     background-color:  rgb(134, 188, 233);
 }
