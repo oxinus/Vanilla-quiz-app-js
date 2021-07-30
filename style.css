@@ -109,7 +109,6 @@ body{
 .question-header{
     padding: 20px;
     height: 60px;
-    border-bottom: 1px lightgrey solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -142,6 +141,13 @@ body{
 }
 .time-content{
     color: rgb(115, 69, 146);
+}
+.timer-line{
+    height: 3px;
+    border: none;
+    background-color:  rgb(134, 188, 233);
+    margin: 0 1px;
+    /* background-color: rgb(235, 232, 232); */
 }
 /* -------------------------------------------------- */
 
