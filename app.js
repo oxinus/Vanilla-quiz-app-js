@@ -184,8 +184,10 @@ nextBtn.onclick = function() {
     if (questions[questionsIndex].state === false ){
         return null
     } else{
-        // increase questions index to access next questions 
+        // increase questions index to have next questions 
         questionsIndex ++
-        
+        let index = questions[questionsIndex].numb
+        quesCounter( index- 1);
+        quesHandler(index);
     }
 }
