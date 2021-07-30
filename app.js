@@ -88,6 +88,7 @@ function autoSelect (index) {
     correctHandler(index);
     disable_optionHandler(index);
     nextbutn_styleHandler();
+    questions[questionsIndex].state = true;
 }
 
 // disable options and set some styles when user select 
@@ -176,3 +177,8 @@ cntinue.onclick = function(e) {
     startTimerline()
 };
 
+nextBtn.onclick = function() {
+    // if (questions[questionsIndex].state === false ){
+    //     return null
+    // } 
+}
