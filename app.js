@@ -177,8 +177,15 @@ cntinue.onclick = function(e) {
     startTimerline()
 };
 
+// user clicks on the continue 
 nextBtn.onclick = function() {
+
+    // if user doesnt click or autoselec doesnt call continue onclick doesnt do anything 
     if (questions[questionsIndex].state === false ){
         return null
-    } 
+    } else{
+        // increase questions index to access next questions 
+        questionsIndex ++
+        
+    }
 }
