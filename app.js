@@ -51,6 +51,12 @@ function startTimer(index) {
     function Timer() {
         timerNumb.innerText = timeLeft
 
+        // when timeLeft is one number put a zero behind it 
+        if (timeLeft < 10){
+            timerNumb.innerText = '0' + timeLeft;
+        }
+        // ------------
+
         // when time is over interval will clear, and call auto select that show the correct answer
         if (timeLeft === 0){
             clearInterval(countdown)
