@@ -202,6 +202,8 @@ nextBtn.onclick = function() {
         // if we reach the last question we gotta show result 
         if (questionsIndex === 4){
             nextBtn.innerText = 'Finish';
+            nextBtn.style.width = '100px';
+            nextBtn.style.letterSpacing = '1px'
             nextBtn.onclick = function() {
                 quesContainer.style.display = 'none';
                 resultContainer.style.display = 'block';
