@@ -16,7 +16,7 @@ body{
 
 /* ---------------------start quiz --------------------- */
 .start-quiz{
-    display: none;
+    display: block;
     font-size: 1.1rem;
     background-color: white;
     color:  rgb(33, 130, 209);
