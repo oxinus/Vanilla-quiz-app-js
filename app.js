@@ -207,7 +207,7 @@ nextBtn.onclick = function() {
             nextBtn.onclick = function() {
                 quesContainer.style.display = 'none';
                 resultContainer.style.display = 'block';
-                quizResult.innerHTML = `and nice 😎, You got <strong>${userScore}
+                quizResult.innerHTML = `${(userScore <= 2) ? `and nice 😎`: `congratulations 😍`}` + `,You got <strong>${userScore}
                 </strong> of <strong>${questions.length}</strong>`;
             }
            
