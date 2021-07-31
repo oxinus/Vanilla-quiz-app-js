@@ -232,6 +232,7 @@ li{
     display: flex;
     flex-direction: column;
     text-align: center;
+    display: none;
 }
 .crown-container{
     height: 45%;

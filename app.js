@@ -11,6 +11,9 @@ var timerNumb = document.querySelector('.timer-number');
 var timeContent = document.querySelector('.time-content');
 var timerLine = document.querySelector('.timer-line');
 var nextBtn = document.querySelector('.next-button');
+var quesContainer = document.querySelector('.questions-container');
+var quizResult = document.querySelector('.result-content');
+var resultContainer = document.querySelector('.result-container');
 // --------------------------------------------------
 
 // global variables 
@@ -198,20 +201,25 @@ nextBtn.onclick = function() {
 
         // if we reach the last question we gotta show result 
         if (questionsIndex === 4){
-           nextBtn.innerText = 'Finish';
+            nextBtn.innerText = 'Finish';
+            nextBtn.onclick = function() {
+                quesContainer.style.display = 'none';
+                resultContainer.style.display = 'block';
+                quizResult.innerHTML = `and nice 😎, You got <strong>${userScore}
+                </strong> of <strong>${questions.length}</strong>`;
+            }
            
-        } else{
+        } 
         // reset timer and counterline to start from beginning
-            timeLeft = 15;
-            timerlineWidth = 100
-            startTimer(questionsIndex)
-            startTimerline()
-            // ----------------
-            quesCounter( questionsIndex);
-            quesHandler(questionsIndex);
+        timeLeft = 15;
+        timerlineWidth = 100
+        startTimer(questionsIndex)
+        startTimerline()
+        // ----------------
+        quesCounter( questionsIndex);
+        quesHandler(questionsIndex);
 
-            // reset nextbutton style to it's initial
-            Reset_nextBtn_styleHandler()
-        }
+        // reset nextbutton style to it's initial
+        Reset_nextBtn_styleHandler()
     }
 }
