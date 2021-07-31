@@ -31,22 +31,17 @@ function quesCounter (index) {
 
 // show the questions in li tag and set attributer for eachone 
 function quesHandler (numbIndex) {
-
-    // minus one because the numb of questions start from 1 but index of questions list starts from 0 
-    let quesindex  = numbIndex - 1
-    // --------------------------------
-
-    questionTitle.innerHTML = `<span>${questions[quesindex].numb}.</span> ${questions[quesindex].question}`;
-    for (let i=0; i< questions[quesindex].options.length; i++){
+    questionTitle.innerHTML = `<span>${questions[numbIndex].numb}.</span> ${questions[numbIndex].question}`;
+    for (let i=0; i< questions[numbIndex].options.length; i++){
         var li = document.createElement('li');
         li.classList.add('li-hover')
-        li.innerHTML = (questions[quesindex].answer === questions[quesindex].options[i]) ? 
-        `${questions[quesindex].options[i]} <span class='check-icon'><i class="fas fa-check"></i></span>`: 
-        `${questions[quesindex].options[i]} <span class='times-icon'><i class="fas fa-times"></i></span>` ;
+        li.innerHTML = (questions[numbIndex].answer === questions[numbIndex].options[i]) ? 
+        `${questions[numbIndex].options[i]} <span class='check-icon'><i class="fas fa-check"></i></span>`: 
+        `${questions[numbIndex].options[i]} <span class='times-icon'><i class="fas fa-times"></i></span>` ;
         ul.appendChild(li);
 
         // set a onclick for each one of li to access them all 
-        li.setAttribute('onclick', `ansSelect(this, ${quesindex})`)
+        li.setAttribute('onclick', `ansSelect(this, ${numbIndex})`)
     }
 }
 
@@ -171,9 +166,9 @@ exitQuiz.onclick = function() {
 cntinue.onclick = function(e) {
     info.style.display = 'none';
     infoContainer.style.display = 'block';
-    quesHandler(questions[0].numb)
-    quesCounter(0);
-    startTimer(0)
+    quesHandler(questionsIndex)
+    quesCounter(questionsIndex);
+    startTimer(questionsIndex)
     startTimerline()
 };
 
@@ -186,8 +181,7 @@ nextBtn.onclick = function() {
     } else{
         // increase questions index to have next questions 
         questionsIndex ++
-        let index = questions[questionsIndex].numb
-        quesCounter( index- 1);
-        quesHandler(index);
+        quesCounter( questionsIndex);
+        quesHandler(questionsIndex);
     }
 }
