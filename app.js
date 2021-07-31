@@ -179,6 +179,8 @@ nextBtn.onclick = function() {
     if (questions[questionsIndex].state === false ){
         return null
     } else{
+
+        ul.innerHTML ='';
         // increase questions index to have next questions 
         questionsIndex ++
         quesCounter( questionsIndex);
