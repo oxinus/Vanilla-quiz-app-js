@@ -15,6 +15,7 @@ var quesContainer = document.querySelector('.questions-container');
 var quizResult = document.querySelector('.result-content');
 var resultContainer = document.querySelector('.result-container');
 var quitBtn = document.querySelector('.quitBtn');
+var replayBtn = document.querySelector('.replayBtn');
 // --------------------------------------------------
 
 // global variables 
@@ -226,7 +227,16 @@ nextBtn.onclick = function() {
         Reset_nextBtn_styleHandler()
     }
 }
+
+// user clicks on the quit quiz button
 quitBtn.onclick = function() {
+    location.reload();
     resultContainer.style.display = 'none';
     start.style.display = 'block';
+}
+
+// user clicks on the replay quiz button
+replayBtn.onclick = function() {
+    resultContainer.style.display = 'none';
+    quesContainer.style.display = 'block'
 }
