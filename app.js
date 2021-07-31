@@ -14,6 +14,7 @@ var nextBtn = document.querySelector('.next-button');
 var quesContainer = document.querySelector('.questions-container');
 var quizResult = document.querySelector('.result-content');
 var resultContainer = document.querySelector('.result-container');
+var quitBtn = document.querySelector('.quitBtn');
 // --------------------------------------------------
 
 // global variables 
@@ -224,4 +225,8 @@ nextBtn.onclick = function() {
         // reset nextbutton style to it's initial
         Reset_nextBtn_styleHandler()
     }
+}
+quitBtn.onclick = function() {
+    resultContainer.style.display = 'none';
+    start.style.display = 'block';
 }
