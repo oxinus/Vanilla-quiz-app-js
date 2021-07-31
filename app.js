@@ -197,12 +197,10 @@ nextBtn.onclick = function() {
         questionsIndex ++
 
         // if we reach the last question we gotta show result 
-        if (questionsIndex === 5){
+        if (questionsIndex === 4){
+           nextBtn.innerText = 'Finish';
            
-        } 
-        //  if we havnot reached the last question this operation should be done
-        else{
-
+        } else{
         // reset timer and counterline to start from beginning
             timeLeft = 15;
             timerlineWidth = 100
