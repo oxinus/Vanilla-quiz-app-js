@@ -90,6 +90,8 @@ function autoSelect (index) {
     disable_optionHandler(index);
     nextbutn_styleHandler();
     questions[questionsIndex].state = true;
+    clearInterval(countdown);
+    clearInterval(counterLine);
 }
 
 // disable options and set some styles when user select 
@@ -199,9 +201,10 @@ nextBtn.onclick = function() {
         // if we reach the last question we gotta show result 
         if (questionsIndex === 5){
            
-            //  if we havnot reached the last question this operation should be done
-        } else{
-            
+        } 
+        //  if we havnot reached the last question this operation should be done
+        else{
+
         // reset timer and counterline to start from beginning
             timeLeft = 15;
             timerlineWidth = 100
