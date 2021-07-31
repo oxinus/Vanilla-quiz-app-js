@@ -179,11 +179,21 @@ nextBtn.onclick = function() {
     if (questions[questionsIndex].state === false ){
         return null
     } else{
+        // remove ul chillnodes to replace current questions with next questions 
+        ul.innerHTML =''; 
 
-        ul.innerHTML ='';
         // increase questions index to have next questions 
         questionsIndex ++
+
+        // reset timer and counterline to start from beginning
+        timeLeft = 15;
+        timerlineWidth = 100
+        startTimer(questionsIndex)
+        startTimerline()
+        // ----------------
+        
         quesCounter( questionsIndex);
         quesHandler(questionsIndex);
+        
     }
 }
