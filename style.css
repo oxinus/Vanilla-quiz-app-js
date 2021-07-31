@@ -16,7 +16,7 @@ body{
 
 /* ---------------------start quiz --------------------- */
 .start-quiz{
-    display: block;
+    display: none;
     font-size: 1.1rem;
     background-color: white;
     color:  rgb(33, 130, 209);
@@ -222,3 +222,29 @@ li{
     border: 1px rgb(50, 155, 241) solid;
 }
 /* --------------------------------------------- */
+
+/* ----------- Quiz Result ------------- */
+.result-container{
+    height: 350px;
+    width: 420px;
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.crown-container{
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-crown{
+    color: rgb(50, 155, 241);
+    font-size: 5rem;
+    display: block;
+}
+.text-container{
+    height: 30%;
+    padding-top: 10px;
+}

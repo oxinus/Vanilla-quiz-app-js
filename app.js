@@ -191,10 +191,8 @@ nextBtn.onclick = function() {
     if (questions[questionsIndex].state === false ){
         return null
     } else{
-
         // remove ul chillnodes to replace current questions with next questions 
         ul.innerHTML =''; 
-
         // increase questions index to have next questions 
         questionsIndex ++
 
