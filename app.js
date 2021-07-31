@@ -143,6 +143,10 @@ function nextbutn_styleHandler() {
     nextBtn.style.opacity = 1;
     nextBtn.style.cursor = 'pointer';
 }
+function Reset_nextBtn_styleHandler() {
+    nextBtn.style.opacity = .7;
+    nextBtn.style.cursor = 'default';
+}
 
 // end of functions ----------------------------
 
@@ -191,9 +195,9 @@ nextBtn.onclick = function() {
         startTimer(questionsIndex)
         startTimerline()
         // ----------------
-        
         quesCounter( questionsIndex);
         quesHandler(questionsIndex);
+        Reset_nextBtn_styleHandler()
         
     }
 }
