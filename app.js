@@ -196,17 +196,23 @@ nextBtn.onclick = function() {
         // increase questions index to have next questions 
         questionsIndex ++
 
+        // if we reach the last question we gotta show result 
+        if (questionsIndex === 5){
+           
+            //  if we havnot reached the last question this operation should be done
+        } else{
+            
         // reset timer and counterline to start from beginning
-        timeLeft = 15;
-        timerlineWidth = 100
-        startTimer(questionsIndex)
-        startTimerline()
-        // ----------------
-        quesCounter( questionsIndex);
-        quesHandler(questionsIndex);
+            timeLeft = 15;
+            timerlineWidth = 100
+            startTimer(questionsIndex)
+            startTimerline()
+            // ----------------
+            quesCounter( questionsIndex);
+            quesHandler(questionsIndex);
 
-        // reset nextbutton style to it's initial
-        Reset_nextBtn_styleHandler()
-        
+            // reset nextbutton style to it's initial
+            Reset_nextBtn_styleHandler()
+        }
     }
 }
