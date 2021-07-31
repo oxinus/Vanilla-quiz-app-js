@@ -16,7 +16,6 @@ body{
 
 /* ---------------------start quiz --------------------- */
 .start-quiz{
-    display: block;
     font-size: 1.1rem;
     background-color: white;
     color:  rgb(33, 130, 209);
@@ -229,10 +228,9 @@ li{
     width: 420px;
     background-color: white;
     border-radius: 3px;
-    display: flex;
+    display: none;
     flex-direction: column;
     text-align: center;
-    display: none;
 }
 .crown-container{
     height: 45%;
@@ -248,4 +246,41 @@ li{
 .text-container{
     height: 30%;
     padding-top: 10px;
+}
+.result-content{
+    margin-top: 10px;
+}
+.rsltBtn-container{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+
+}
+.replayBtn, .quitBtn{
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
+    width: 110px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.replayBtn{
+    color: white;
+    background-color:  rgb(50, 155, 241);
+}
+.quitBtn{
+    color:  rgb(50, 155, 241);
+    background-color: white;
+    border: 1px  rgb(50, 155, 241) solid;
+}
+.quitBtn:hover{
+    background-color: rgb(50, 155, 241);
+    color: white;
+    transition: all ease .2s;
+}
+.replayBtn:hover{
+    background-color: rgb(33, 130, 209);
+    transition: all ease .1s;
 }
