@@ -180,7 +180,7 @@ exitQuiz.onclick = function() {
 };
 
 // user click on the continue the questions will handle  
-cntinue.onclick = function(e) {
+cntinue.onclick = function continueHandler() {
     info.style.display = 'none';
     infoContainer.style.display = 'block';
     quesHandler(questionsIndex)
@@ -231,12 +231,9 @@ nextBtn.onclick = function() {
 // user clicks on the quit quiz button
 quitBtn.onclick = function() {
     location.reload();
-    resultContainer.style.display = 'none';
-    start.style.display = 'block';
 }
 
 // user clicks on the replay quiz button
 replayBtn.onclick = function() {
-    resultContainer.style.display = 'none';
-    quesContainer.style.display = 'block'
+    
 }
