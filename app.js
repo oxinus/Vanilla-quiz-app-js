@@ -56,7 +56,7 @@ function startTimer(index) {
             clearInterval(countdown)
             timeContent.innerText = 'Time Off'
             for (let i=0; i<4; i++){
-                if (ul.childNodes[i].innerText === questions[0].answer){
+                if (ul.childNodes[i].innerText === questions[questionsIndex].answer){
                 autoSelect(ul.childNodes[i])
                 }
             }
@@ -116,7 +116,7 @@ function wrongHandler(userSlct) {
 
         // show the correct answer when user select wrong 
         for (let i=0; i<4; i++){
-            if (ul.childNodes[i].innerText === questions[0].answer){
+            if (ul.childNodes[i].innerText === questions[questionsIndex].answer){
                 correctHandler(ul.childNodes[i])
             }
         }
@@ -183,6 +183,7 @@ nextBtn.onclick = function() {
     if (questions[questionsIndex].state === false ){
         return null
     } else{
+
         // remove ul chillnodes to replace current questions with next questions 
         ul.innerHTML =''; 
 
@@ -197,6 +198,8 @@ nextBtn.onclick = function() {
         // ----------------
         quesCounter( questionsIndex);
         quesHandler(questionsIndex);
+
+        // reset nextbutton style to it's initial
         Reset_nextBtn_styleHandler()
         
     }
