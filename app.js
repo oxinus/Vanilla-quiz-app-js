@@ -96,10 +96,11 @@ function startTimer() {
 
 // handle timer line and every 15 ms decrease timerlineWidth 
 function startTimerline() {
-    counterLine = setInterval(timer, 15)
-    //  every 15 ms we minus the timerline width by 1/10 and the backgroun color will be shown with the 1/10 value 
+    counterLine = setInterval(timer, 50)
+    /*  every 50 ms we minus the timerline width by .34 and the backgroun 
+    color will be shown with the .34 value that will be added to background  */
     function timer() {
-        timerlineWidth -= 1/10
+        timerlineWidth -= .34
         timerLine.style.width = `${timerlineWidth}%`
          
         // when times up we stop it 
