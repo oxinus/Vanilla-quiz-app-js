@@ -9,6 +9,7 @@ body{
 }
 .container{
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -165,14 +166,14 @@ body{
     padding-top: 25px;
 }
 li{
+    display: flex;
+    justify-content: space-between;
     list-style: none;
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 12px;
     background-color: aliceblue;
     border: 1px lightblue solid;
-    display: flex;
-    justify-content: space-between;
     cursor: pointer;
 }
 .li-hover:hover{
@@ -283,4 +284,122 @@ li{
 .replayBtn:hover{
     background-color: rgb(33, 130, 209);
     transition: all ease .1s;
+}
+
+
+/* -----responsive design  --------------------*/
+
+@media (max-width:378px) {
+    .info-container{
+        width: 95vw;
+        height: 420px;
+        margin: auto;
+    }
+    .info-header{
+        font-size: .9rem;
+        letter-spacing: 1px;
+        padding: 17px;
+    }
+    p{
+        font-size: .8rem;
+        line-height: 20px;
+        padding: 8px;
+    }
+    .info-content{
+        width: 92%;
+        padding: 10px 0;
+        margin: auto;
+    }
+    .info-buttons{
+        justify-content: space-around;
+        
+    }
+    .exit-button, .continue-button{
+        letter-spacing: none;
+        /* font-size: .8rem; */
+        margin: 0;
+        padding: 10px;
+        font-weight: 600;
+        width: 100px;
+        height: 36px;
+    }
+    .questions-container{
+        width: 95vw;
+        margin: auto;
+        height: 450px;
+    }
+    .question-header{
+        height: 75px;
+        padding: 10px;
+    }
+    .header-title{
+        font-size: .9rem;
+        font-weight: 600;
+    }
+    .time-content{
+        font-size: .8rem;
+    }
+    .timer-number{
+        font-size: 1rem;
+        padding: 3px;
+    }
+    .timer-container{
+        height: 24px;
+        width: 30px;
+    }
+    .header-timer{
+        width: 110px;
+    }
+    .question-title{
+        font-size: 1rem;
+        padding-top: 5px;
+    }
+    li{
+        font-size: .9rem;
+        height: 40px;
+        margin-bottom: 15px;
+    }
+    .fa-check, .fa-times{
+        font-size: .9rem;
+    }
+    .question-content{
+        padding-bottom: 10px;
+    }
+    .question-counter{
+        font-size: .9rem;
+        padding: 14px;
+    }
+    .next-button{
+        font-size: .7rem;
+        letter-spacing: 1px;
+        font-weight: 600;
+        width: 84px;
+        height: 34px;
+        padding: 2px;
+    }
+    .nextbtn-container{
+        padding: 15px;
+    }
+    .result-container{
+        width: 80vw;
+        height: 340px;
+    }
+    .fa-crown{
+        font-size: 3.5rem;
+    }
+    .crown-container{
+        height: 40%;
+    }
+    .text-container{
+        font-size: .9rem;
+        height: 35%;
+    }
+    .replayBtn, .quitBtn{
+        font-size: .9rem;
+        padding: 7px;
+        width: 90px;
+    }
+    .rsltBtn-container{
+        justify-content: space-between;
+    }
 }
